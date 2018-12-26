@@ -95,8 +95,8 @@
 
 #### Mockups
 
-![Employee Directory](mockups\employee_directory.png)
+![Employee Directory](https://github.com/technakal/techdegree-unit-05/blob/master/mockups/employee_directory.png)
 
-![Employee Overlay](mockups\employee_overlay.png)
+![Employee Overlay](https://github.com/technakal/techdegree-unit-05/blob/master/mockups/employee_overlay.png)
 
 ### Development Documentation

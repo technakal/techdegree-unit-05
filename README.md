@@ -104,18 +104,18 @@
 
 ###### Diagram
 
-root -|
-|
-|--index.html
-|
-|-- js--|
-| |--app.js
-| |--Directory.js
-| |--Employee.js
-|
-|--css--|
-|--normalize.css
-|--styles.css
+root -|  
+      |  
+      |--index.html  
+      |  
+      |-- js--|  
+      |       |--app.js  
+      |       |--Directory.js  
+      |       |--Employee.js  
+      |  
+      |--css--|  
+              |--normalize.css  
+              |--styles.css  
 
 ###### JavaScript Files
 

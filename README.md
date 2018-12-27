@@ -102,21 +102,6 @@
 
 ##### File Structure
 
-###### Diagram
-
-root -|  
-      |  
-      |--index.html  
-      |  
-      |-- js--|  
-      |       |--app.js  
-      |       |--Directory.js  
-      |       |--Employee.js  
-      |  
-      |--css--|  
-              |--normalize.css  
-              |--styles.css  
-
 ###### JavaScript Files
 
 **app.js**

@@ -139,9 +139,9 @@ root -|
 
 ##### Classes
 
-###### Employee
+**Employee**
 
-**Attributes**
+_**Attributes**_
 
 - image
 - first name
@@ -154,7 +154,7 @@ root -|
 - postal code
 - birthday
 
-**Methods**
+_**Methods**_
 
 ```js
 get name() {
@@ -174,13 +174,13 @@ renderEmployeeFull() {
 }
 ```
 
-###### Directory
+**Directory**
 
-**Attributes**
+_**Attributes**_
 
 - Employees
 
-**Methods**
+_**Methods**_
 
 ```js
 filterDirectoryBySearch() {

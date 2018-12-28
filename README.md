@@ -209,9 +209,23 @@ closeFullDetails() {
 
 #### Visual Design
 
+* Made the following changes to the original design:
+  * Applied a color scheme. See Colors, below.
+  * Changed company font to make it more bold.
+  * Applied color scheme to company font in a sweet gradient.
+  * Added flare to the cards and modal through the use of borders.
+  * Adjusted transition effects to cards.
+  * Used CSS variables to make updates easier.
+
 ##### Colors
 
+--color-primary: #659999;
+--color-secondary: #f4791f;
+
 ##### Fonts
+
+--font-header: Staatliches, serif;
+--font-main: Nunito, sans-serif;
 
 #### Mockups
 

@@ -1,22 +1,29 @@
-/* ===================================== 
-   Public API Request
-======================================== */
+@import url('https://fonts.googleapis.com/css?family=Nunito|Staatliches');
 
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/* =============================
+    VARIABLES
+============================= */
+
+:root {
+    --color-primary: #659999;
+    --color-secondary: #f4791f;
+    --font-header: Staatliches, serif;
+    --font-main: Nunito, sans-serif;
+}
 
 * {
 	box-sizing: border-box;
 }
 
 html, body {
-    width: 100%;
     max-width: 100%;
+    width: 100%;
 }
 
 body {
+    background: rgba(235, 235, 235, 0.9);
     font-family: "Nunito", sans-serif;
     text-align: center;
-    background: rgba(235, 235, 235, 0.9);
 }
 
 header {
@@ -24,23 +31,33 @@ header {
 }
 
 .header-inner-container {
-    max-width: 1180px;
     margin: auto;
+    max-width: 1180px;
 }
 
 header h1 {
-    font-size: 1.25em;
-    color: rgba(50, 50, 50, 0.9);
+    /* Metapolis gradient from https://uigradients.com/#Metapolis */
+    background: var(--color-primary);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--color-secondary), var(--color-primary)); 
+    background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+    -webkit-background-clip: text;
+    font-family: var(--font-header);
+    font-size: 2.25em;
     margin-top: 35px;
+    -webkit-text-fill-color: transparent;
+}
+
+.small {
+    font-size: 1.75rem;
 }
 
 .search-input {
-    padding: 0.4rem 1rem;
     border: 1px solid rgba(200, 200, 200, 0.9);
     border-radius: 0.25rem 0 0 0.25rem ;
     max-width: 20rem;
-    transition: .4s ease-out;
+    padding: 0.4rem 1rem;
     outline: none;
+    transition: .4s ease-out;
 }
 
 .search-input:active, .search-input:hover, .search-input:focus {
@@ -48,13 +65,13 @@ header h1 {
 }
 
 .search-submit {
+    background: rgba(245, 245, 245, 0.9);
+    border: 1px solid rgba(200, 200, 200, 0.9);
+    border-radius: 0 0.25rem 0.25rem 0;
     cursor: pointer;
     height: 33px;
-    background: rgba(245, 245, 245, 0.9);
-    border-radius: 0 0.25rem 0.25rem 0;
-    border: 1px solid rgba(200, 200, 200, 0.9);
-    transition: .4s ease-out;
     outline: none;
+    transition: .4s ease-out;
 }
 
 .search-submit:active, .search-submit:hover, .search-submit:focus {
@@ -72,32 +89,33 @@ header h1 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 100%;
-    max-width: 1200px;
     margin: auto;
+    max-width: 1200px;
+    width: 100%;
 }
   
 .card {
+    background: rgba(245, 245, 245, 0.9);
+    border-radius: 0.25em;
+    border-top: 15px solid var(--color-secondary);
+    box-shadow: 0 4px 5px rgba(0,0,0,0.19), 0 6px 7px 2px rgba(0,0,0,0.23);
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    cursor: pointer;
-    width: 100%;
-    max-width: 360px;
     margin: 10px 10px 20px;
-    padding: 10px;
-    background: rgba(245, 245, 245, 0.9);
-    border-radius: 0.25em;
-    border: 1px solid rgba(50, 50, 50, 0.3);
-    transition: .4s ease-out;
+    max-width: 360px;
+    padding: 10px 10px 15px 10px;
     overflow: hidden;
+    transition: .3s ease-out;
+    width: 100%;
 }
 
 .card-img {
-    width: 95px;
-    margin: 10px 15px auto 10px;
     border-radius: 50%;
+    margin: 10px 15px auto 10px;
+    width: 95px;
 }
 
 .card-info-container {
@@ -109,8 +127,8 @@ header h1 {
 }
 
 .card-text {
-    font-size: 0.9em;
     color: rgba(50, 50, 50, 0.7);
+    font-size: 0.9em;
     margin: 7px auto;
     transition: .4s ease-out;
 }
@@ -125,43 +143,44 @@ header h1 {
 ======================================== */
 
 .modal-container {
+    background: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    left: 0;
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
 }
 
 .modal {
-    position: relative;
-    width: 95%;
+    background: rgba(255, 255, 255, 1);
+    border-bottom: 5px solid var(--color-primary);
+    border-radius: 0.25em;
+    border-top: 15px solid  var(--color-secondary);
+    margin: 10px auto auto;
     max-width: 420px;
     min-height: 415px;
-    margin: 10px auto auto;
     padding-bottom: 15px;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 0.25em;
-    border: 1px solid rgba(100, 100, 100, 0.3);
+    position: relative;
     transition: .4s ease-out;
+    width: 95%;
 }
 
 .modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.9);
     background: rgba(0, 0, 0, 0.8);
-    outline: none;
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    outline: none;
 }
 
 .modal-img {
-    width: 150px;
-    margin-top: 35px;
     border-radius: 50%;
+    margin-top: 35px;
+    width: 150px;
 }
 
 .modal-name {
@@ -174,37 +193,37 @@ header h1 {
 }
 
 .modal hr {
-    width: 75%;
-    margin: 25px auto 30px;
     border-color: rgba(200, 200, 200, 0.2);
+    margin: 25px auto 30px;
+    width: 75%;
 }
 
 .modal-btn-container {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    border-radius: 0.25em;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    width: 95%;
+    margin: 10px auto auto;
     max-width: 420px;
     padding: 10px 15px 15px;;
-    margin: 10px auto auto;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 0.25em;
-    border: 1px solid rgba(100, 100, 100, 0.3);
+    width: 95%;
 }
 
 
 .modal-btn-container .btn {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 0.85em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    padding: 0.75em 1.5em;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 0.35em;
-    transition: .4s ease-out;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.85em;
+    padding: 0.75em 1.5em;
     outline: none;
+    text-transform: uppercase;
+    transition: .4s ease-out;
   }
   
 
@@ -222,8 +241,8 @@ header h1 {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-        padding-right: 25px;
         padding-left: 25px;
+        padding-right: 25px;
     }
 
     .header-text-container {
@@ -249,7 +268,8 @@ header h1 {
 
     .card:hover {
         background: rgba(255, 255, 255, 1);
-        border: 1px solid rgba(50, 50, 50, 0.9);
+        border-top: 15px solid var(--color-primary);
+        transition: 0.1 all ease;
     }
 
     .card:hover .card-text {

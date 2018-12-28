@@ -39,8 +39,8 @@
 ##### Priority 2
 
 6. When the user is viewing the Employee_Data, the Employee_App shall allow the user to navigate through the Employee_Data for each Employee, one at a time.
-7. When {the user reaches the beginning of the Employee_List} AND {the user navigates to the prior Employee}, the Employee_App shall navigate the user to the Employee at the end of the Employee_List.
-8. When {the user reaches the end of the Employee_List} AND {the user navigates to the next Employee}, the Employee_App shall navigate the user to the Employee at the beginning of the Employee_List.
+7. When {the user reaches the beginning of the Employee_List} AND {the user navigates to the prior Employee}, the Employee_App shall display the Employee_Data for the Employee at the end of the Employee_List.
+8. When {the user reaches the end of the Employee_List} AND {the user navigates to the next Employee}, the Employee_App shall display the Employee_Data for the Employee at the beginning of the Employee_List.
 9. The Employee_App shall allow the user to filter the Employee_List by name.
 10. The Employee_App shall differ from the Visual_Design in one or more of the following ways:
     a. Color
@@ -142,7 +142,7 @@ _**Attributes**_
 _**Methods**_
 
 ```js
-get name() {
+get fullName() {
   // returns this.firstName + this.lastName
 }
 

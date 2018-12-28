@@ -83,7 +83,7 @@ class Employee {
   renderEmployeeFull() {
     return `
       <div class="modal" id="employee-${this.id}">
-        <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+        <button type="button" id="modal-close-btn" class="modal-close-btn">×</button>
         <div class="modal-info-container">
           <img class="modal-img" src="${this.picture.medium}" alt="${this.fullName} picture">
           <h3 id="name" class="modal-name cap">${this.fullName}</h3>

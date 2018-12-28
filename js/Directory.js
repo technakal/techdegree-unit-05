@@ -45,7 +45,7 @@ class Directory {
    * Returns the index of the current employee displayed in the modal.
    */
   determineDisplayedEmployee() {
-    return Number(document.querySelector('.modal').id.split('-')[1]);
+    return document.querySelector('.modal').id;
   }
   
   /**
@@ -65,16 +65,19 @@ class Directory {
    * If currently viewing the last employee, loads the first employee in the directory.
    */
   viewNextEmployee() {
-    const currentIndex = this.determineDisplayedEmployee();
-    if(currentIndex !== this.employees.length - 1) {
-      const nextEmployee = this.employees[currentIndex + 1];
-      const nextHtml = nextEmployee.renderEmployeeFull();
+    const allAppendedEmployees = document.querySelectorAll('.card');
+    const currentEmployeeId = this.determineDisplayedEmployee();
+
+    if(currentEmployeeId !== allAppendedEmployees[allAppendedEmployees.length - 1].id) {
+      const nextEmployeeId = document.querySelector(`#${currentEmployeeId}`).nextElementSibling.id;
+      const nextEmployee = this.employees[nextEmployeeId.split('-')[1]];
       this.closeFullDetails();
-      this.viewFullDetails(nextHtml);
+      this.viewFullDetails(nextEmployee.renderEmployeeFull());
     } else {
-      const nextHtml = this.employees[0].renderEmployeeFull();
+      const firstEmployeeId = allAppendedEmployees[0].id;
+      const firstEmployee = this.employees[firstEmployeeId.split('-')[1]];
       this.closeFullDetails();
-      this.viewFullDetails(nextHtml);
+      this.viewFullDetails(firstEmployee.renderEmployeeFull());
     }
   }
   
@@ -83,16 +86,18 @@ class Directory {
    * If currently viewing the first employee, loads the last employee in the directory.
    */
   viewPreviousEmployee() {
-    const currentIndex = this.determineDisplayedEmployee();
-    if(currentIndex !== 0) {
-      const nextEmployee = this.employees[currentIndex - 1];
-      const nextHtml = nextEmployee.renderEmployeeFull();
+    const allAppendedEmployees = document.querySelectorAll('.card');
+    const currentEmployeeId = this.determineDisplayedEmployee();
+    if(currentEmployeeId !== allAppendedEmployees[0].id) {
+      const prevEmployeeId = document.querySelector(`#${currentEmployeeId}`).previousElementSibling.id;
+      const prevEmployee = this.employees[prevEmployeeId.split('-')[1]];
       this.closeFullDetails();
-      this.viewFullDetails(nextHtml);
+      this.viewFullDetails(prevEmployee.renderEmployeeFull());
     } else {
-      const nextHtml = this.employees[this.employees.length - 1].renderEmployeeFull();
+      const lastEmployeeId = allAppendedEmployees[allAppendedEmployees.length - 1].id;
+      const lastEmployee = this.employees[lastEmployeeId.split('-')[1]];
       this.closeFullDetails();
-      this.viewFullDetails(nextHtml);
+      this.viewFullDetails(lastEmployee.renderEmployeeFull());
     }
   }
   

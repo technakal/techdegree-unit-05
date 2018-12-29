@@ -90,7 +90,7 @@ class Employee {
           <p class="modal-text">${this.email}</p>
           <p class="modal-text cap">${this.location.city}</p>
           <hr>
-          <p class="modal-text">${this.phone}</p>
+          <p class="modal-text">${this.cell}</p>
           <p class="modal-text cap">${this.address}</p>
           <p class="modal-text">Birthday: ${this.birthday}</p>
         </div>

@@ -40,7 +40,7 @@ class Employee {
    * Street, city, state, and postal code.
    */
   get address() {
-    return `${this.location.street} ${this.location.city}, ${this.location.state}  ${this.location.postcode}`;
+    return `${this.location.street.number} ${this.location.street.name}, ${this.location.city}, ${this.location.state}  ${this.location.postcode}`;
   }
 
   /**

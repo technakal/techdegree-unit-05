@@ -22,7 +22,7 @@ class Employee {
    */
   get birthday() {
     const birthday = this.dateOfBirth.date.split('T')[0].split('-');
-    return `${birthday[1]}-${birthday[2]}-${birthday[0]}`
+    return `${birthday[1]}-${birthday[2]}-${birthday[0]}`;
     // 1966-01-09T02:28:51Z
   }
 
@@ -37,10 +37,10 @@ class Employee {
 
   /**
    * Returns the full address of the employee.
-   * Street, city, state, and postal code. 
+   * Street, city, state, and postal code.
    */
   get address() {
-    return `${this.location.street} ${this.location.city}, ${this.location.state}  ${this.location.postcode}`
+    return `${this.location.street} ${this.location.city}, ${this.location.state}  ${this.location.postcode}`;
   }
 
   /**
@@ -49,7 +49,7 @@ class Employee {
    * @param {string} searchTerm - The search term entered by the user.
    */
   checkName(searchTerm) {
-    if(this.fullName.includes(searchTerm)) {
+    if (this.fullName.toLowerCase().includes(searchTerm.toLowerCase())) {
       return true;
     }
     return false;
@@ -62,16 +62,12 @@ class Employee {
     return `
       <div class="card" id="employee-${this.id}">
         <div class="card-img-container">
-          <img class="card-img" src="${this.picture.thumbnail}" alt="${
-      this.fullName
-    } picture">
+          <img class="card-img" src="${this.picture.thumbnail}" alt="${this.fullName} picture">
         </div>
         <div class="card-info-container">
           <h3 id="name" class="card-name cap">${this.fullName}</h3>
           <p class="card-text">${this.email}</p>
-          <p class="card-text cap">${this.location.city}, ${
-      this.location.state
-    }</p>
+          <p class="card-text cap">${this.location.city}, ${this.location.state}</p>
         </div>
       </div>
     `;
